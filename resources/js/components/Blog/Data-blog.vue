@@ -30,12 +30,14 @@
                         <td>{{items.jbaca}}</td>
 
                         <td>
-                        <a href="#">
-                        <i class="fas fa-edit pink"> | &nbsp; &nbsp; </i>
-                        </a>
-                        <a href="#">
-                        <i class="fas fa-trash teal"></i>
-                        </a>
+                            <center>
+                            <a href="#">
+                            <i class="fas fa-edit pink">  &nbsp; |  &nbsp; </i>
+                            </a>
+                            <a href="#">
+                            <i class="fas fa-trash teal"></i>
+                            </a>
+                            </center>
                         </td>
                     </tr>
                     </tbody>

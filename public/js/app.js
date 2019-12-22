@@ -1967,6 +1967,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2018,6 +2020,11 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2201,6 +2208,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -38833,7 +38842,23 @@ var render = function() {
                     _vm._v(" "),
                     _c("td", [_vm._v(_vm._s(items.jbaca))]),
                     _vm._v(" "),
-                    _vm._m(1, true)
+                    _c(
+                      "td",
+                      [
+                        _c("center", [
+                          _c("a", { attrs: { href: "#" } }, [
+                            _c("i", { staticClass: "fas fa-edit pink" }, [
+                              _vm._v("    |    ")
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("a", { attrs: { href: "#" } }, [
+                            _c("i", { staticClass: "fas fa-trash teal" })
+                          ])
+                        ])
+                      ],
+                      1
+                    )
                   ])
                 }),
                 0
@@ -38858,20 +38883,6 @@ var staticRenderFns = [
         _vm._v(" Tambah Blog\n                    ")
       ]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [
-      _c("a", { attrs: { href: "#" } }, [
-        _c("i", { staticClass: "fas fa-edit pink" }, [_vm._v(" |     ")])
-      ]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "#" } }, [
-        _c("i", { staticClass: "fas fa-trash teal" })
-      ])
-    ])
   }
 ]
 render._withStripped = true
@@ -38907,18 +38918,30 @@ var render = function() {
             _c("table", { staticClass: "table table-bordered" }, [
               _c("thead", [
                 _c("tr", [
-                  _c("th", [_c("center", [_vm._v("Kategori")])], 1),
-                  _vm._v(" "),
                   _c(
                     "th",
-                    { staticStyle: { width: "35%" } },
-                    [_c("center", [_vm._v("Jumlah Data ")])],
+                    { staticStyle: { width: "25%" } },
+                    [_c("center", [_vm._v("Id ")])],
                     1
                   ),
                   _vm._v(" "),
                   _c(
                     "th",
                     { staticStyle: { width: "35%" } },
+                    [_c("center", [_vm._v("Kategori ")])],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "th",
+                    { staticStyle: { width: "25%" } },
+                    [_c("center", [_vm._v("Jumlah ")])],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "th",
+                    { staticStyle: { width: "25%" } },
                     [_c("center", [_vm._v("Aksi ")])],
                     1
                   )
@@ -38928,28 +38951,31 @@ var render = function() {
               _c(
                 "tbody",
                 _vm._l(_vm.kategoris, function(items) {
-                  return _c(
-                    "tr",
-                    { key: items.id },
-                    [
-                      _c("td", [_vm._v(_vm._s(items.namakategori))]),
-                      _vm._v(" "),
-                      _c("td", [_c("center")], 1),
-                      _vm._v(" "),
-                      _c("center", [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _c("i", { staticClass: "fas fa-edit pink" }, [
-                            _vm._v(" | ")
+                  return _c("tr", { key: items.id }, [
+                    _c("td", [_vm._v(_vm._s(items.id))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(items.namakategori))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(items.jumlah))]),
+                    _vm._v(" "),
+                    _c(
+                      "td",
+                      [
+                        _c("center", [
+                          _c("a", { attrs: { href: "#" } }, [
+                            _c("i", { staticClass: "fas fa-edit pink" }, [
+                              _vm._v("   |    ")
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("a", { attrs: { href: "#" } }, [
+                            _c("i", { staticClass: "fas fa-trash teal" })
                           ])
-                        ]),
-                        _vm._v(" "),
-                        _c("a", { attrs: { href: "#" } }, [
-                          _c("i", { staticClass: "fas fa-trash teal" })
                         ])
-                      ])
-                    ],
-                    1
-                  )
+                      ],
+                      1
+                    )
+                  ])
                 }),
                 0
               )
@@ -38970,7 +38996,7 @@ var staticRenderFns = [
       { staticClass: "btn btn-success float-right", attrs: { type: "button" } },
       [
         _c("i", { staticClass: "fas fa-bars nav-icon" }),
-        _vm._v("Tambah Blog\n                    ")
+        _vm._v("Tambah Kategori\n                    ")
       ]
     )
   }
@@ -39213,7 +39239,23 @@ var render = function() {
                     _vm._v(" "),
                     _c("td", [_vm._v(_vm._s(items.email))]),
                     _vm._v(" "),
-                    _vm._m(1, true)
+                    _c(
+                      "td",
+                      [
+                        _c("center", [
+                          _c("a", { attrs: { href: "#" } }, [
+                            _c("i", { staticClass: "fas fa-edit pink" }, [
+                              _vm._v("    |    ")
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("a", { attrs: { href: "#" } }, [
+                            _c("i", { staticClass: "fas fa-trash teal" })
+                          ])
+                        ])
+                      ],
+                      1
+                    )
                   ])
                 }),
                 0
@@ -39234,24 +39276,10 @@ var staticRenderFns = [
       "button",
       { staticClass: "btn btn-success float-right", attrs: { type: "button" } },
       [
-        _c("i", { staticClass: "fas fa-bars nav-icon" }),
-        _vm._v(" Tambah Kategori\n                    ")
+        _c("i", { staticClass: "fas fa-user-friends nav-icon" }),
+        _vm._v(" Tambah User\n                    ")
       ]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [
-      _c("a", { attrs: { href: "#" } }, [
-        _c("i", { staticClass: "fas fa-edit pink" }, [_vm._v(" |     ")])
-      ]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "#" } }, [
-        _c("i", { staticClass: "fas fa-trash teal" })
-      ])
-    ])
   }
 ]
 render._withStripped = true

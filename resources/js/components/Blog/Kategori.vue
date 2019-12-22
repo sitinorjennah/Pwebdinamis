@@ -6,28 +6,33 @@
                     <div class="card-header">Data Kategori</div>
 
                     <div class="card-body">
-                        <button type="button" class="btn btn-success float-right"><i class="fas fa-bars nav-icon"></i>Tambah Blog
+                        <button type="button" class="btn btn-success float-right"><i class="fas fa-bars nav-icon"></i>Tambah Kategori
                         </button>        
                         <table class="table table-bordered">  
                             <thead>
                     <tr>
-                      <th><center>Kategori</center></th>
-                      <th style="width :35%"><center>Jumlah Data </center></th> 
-                      <th style="width :35%"><center>Aksi </center></th> 
+                            <th style="width :25%"><center>Id </center></th>
+                            <th style="width :35%"><center>Kategori </center></th> 
+                            <th style="width :25%"><center>Jumlah </center></th>
+                            <th style="width :25%"><center>Aksi </center></th> 
                     </tr>
                     </thead>
                     <tbody>
                     <tr v-for="items in kategoris" :key="items.id">
-                        <td>{{items.namakategori}}</td>      
-                        <td><center></center></td>
-                        <center>
-                        <a href="#">
-                        <i class="fas fa-edit pink"> | </i>
-                        </a>
-                        <a href="#">
-                        <i class="fas fa-trash teal"></i>
-                        </a>
-                        </center>
+                        <td>{{items.id}}</td>
+                        <td>{{items.namakategori}}</td>
+                        <td>{{items.jumlah}}</td>       
+                        
+                         <td>
+                            <center>
+                            <a href="#">
+                            <i class="fas fa-edit pink"> &nbsp; |  &nbsp; </i>
+                            </a>
+                            <a href="#">
+                            <i class="fas fa-trash teal"></i>
+                            </a>
+                            </center>
+                        </td>
                     </tr>
                     </tbody>
                         </table>

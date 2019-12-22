@@ -6,7 +6,7 @@
                     <div class="card-header">Data User</div>
 
                     <div class="card-body">
-                        <button type="button" class="btn btn-success float-right"><i class="fas fa-bars nav-icon"></i> Tambah Kategori
+                        <button type="button" class="btn btn-success float-right"><i class="fas fa-user-friends nav-icon"></i> Tambah User
                         </button>        
                         <table class="table table-bordered">  
                             <thead>
@@ -23,12 +23,14 @@
                         <td>{{items.name}}</td>
                         <td>{{items.email}}</td>      
                         <td>
-                        <a href="#">
-                        <i class="fas fa-edit pink"> | &nbsp; &nbsp; </i>
-                        </a>
-                        <a href="#">
-                        <i class="fas fa-trash teal"></i>
-                        </a>
+                          <center>
+                            <a href="#">
+                            <i class="fas fa-edit pink">  &nbsp; |  &nbsp; </i>
+                            </a>
+                            <a href="#">
+                            <i class="fas fa-trash teal"></i>
+                            </a>
+                            </center>
                         </td>
                     </tr>
                     </tbody>

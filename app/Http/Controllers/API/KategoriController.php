@@ -26,7 +26,15 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'namakategori'  => 'required|string|max:30',
+        ]);
+
+        return Kategori::create([
+            'id' => $request['id'],
+            'namakategori'  => $request['namakategori'], //yang dikiri dari database,  
+            //kanan dari form yang akan dimasukan ke database
+        ]);
     }
 
     /**

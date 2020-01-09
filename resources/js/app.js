@@ -18,8 +18,8 @@ import {
 } from 'vform';
 
 //import alert
-// import Swal from 'sweetalert2'
-// window.Swal = Swal;
+ import Swal from 'sweetalert2'
+ window.Swal = Swal;
 // const Toast = Swal.mixim({
 //     toast: true,
 //     position: 'top-end',

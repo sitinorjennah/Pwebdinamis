@@ -25,10 +25,11 @@
                         
                          <td>
                             <center>
-                            <a href="#">
+                            <a href="#" @click="editData(items)" title="Edit Data">
                             <i class="fas fa-edit pink"> &nbsp; |  &nbsp; </i>
                             </a>
-                            <a href="#">
+                            |
+                            <a href="#" @click="deleteData(items.id)" title="Hapus Data">
                             <i class="fas fa-trash teal"></i>
                             </a>
                             </center>
@@ -105,6 +106,12 @@
                 this.form.reset();
                 $("#tambah").modal("show");
             },
+            editData(items) {
+                this.editmode = true; 
+                this.form.reset();
+                $("#tambah").modal("show");
+                this.form.fill(items);
+            },
             loadData() { //methods dari semua form CRUD Masuk ke dalam methods 
             axios.get("api/kategori").then(({ data }) =>(this.kategoris = data)); 
             //untuk menampilkan data
@@ -116,14 +123,56 @@
             this.$Progress.start();
             Fire.$emit("refreshData");
             $("#tambah").modal("hide"); //modal hilang
-            // Toast.fire({ //notifikasi di atas
-            //     type: "success",
-            //     title: "Data Berhasi Tersimpan"
-            // });
+            Toast.fire({ //notifikasi di atas
+                type: "success",
+                title: "Data Berhasi Tersimpan"
+            });
             this.$Progress.finish();
             })
             .catch();
         },
+        updateData(){
+          this.form
+            .put("api/kategori/" + this.form.id)
+            .then(() => {
+              this.$Progress.start();
+              $("#tambah").modal("hide");
+              Toast.fire({ //notifikasi di atas
+                  type: "success",
+                  title: "Data Berhasi Terubah"
+              });
+              this.$Progress.finish();
+              Fire.$emit("refreshData");
+            })
+            .catch(() => {
+              this.$Progress.fail();
+            });
+        },
+        deleteData(id) {
+          Swal.fire({
+            title: "Anda Yakin Ingin Menghapus Data ini?",
+            text: "Klik Batal Untuk Membatalkan Penghapusan",
+            type: "Warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3490dc",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Hapus"
+           })
+           .then(result => {
+             if (result.value){
+              this.form
+                .delete("api/kategori/" + id)
+                .then(() => {
+                  Swal.fire("Terhapus", "Data Anda Sudah Terhapus", "success");
+                  Fire.$emit("refreshData");
+                })
+
+                .catch(() => {
+                  Swal.fire("Gagal", "Data Anda Gagal Terhapus", "warning");
+                });
+            }
+          });
+        }
         },
             
         created(){ //untuk menampilkan data
